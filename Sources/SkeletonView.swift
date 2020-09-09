@@ -116,6 +116,7 @@ extension UIView {
     private func recursiveShowSkeleton(skeletonConfig config: SkeletonConfig, root: UIView? = nil) {
         guard isSkeletonable && !isSkeletonActive else { return }
         currentSkeletonConfig = config
+        prepareForSkeleton()
         swizzleLayoutSubviews()
         swizzleTraitCollectionDidChange()
         addDummyDataSourceIfNeeded()
