@@ -10,7 +10,7 @@ public extension UIView {
     }
 
     @IBInspectable
-    var skeletonCornerRadius: Float {
+    var skeletonCornerRadius: CGFloat {
         get { return skeletonableCornerRadius }
         set { skeletonableCornerRadius = newValue }
     }
@@ -24,8 +24,8 @@ public extension UIView {
         set { ao_set(newValue ?? false, pkey: &ViewAssociatedKeys.skeletonable) }
     }
 
-    private var skeletonableCornerRadius: Float! {
-        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonCornerRadius) as? Float ?? 0.0 }
+    private var skeletonableCornerRadius: CGFloat! {
+        get { return ao_get(pkey: &ViewAssociatedKeys.skeletonCornerRadius) as? CGFloat ?? 0.0 }
         set { ao_set(newValue ?? 0.0, pkey: &ViewAssociatedKeys.skeletonCornerRadius) }
     }
 }
