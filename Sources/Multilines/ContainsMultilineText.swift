@@ -13,7 +13,7 @@ protocol ContainsMultilineText {
 	var multilineTextFont: UIFont? { get }
     var numLines: Int { get }
     var lastLineFillingPercent: Int { get }
-    var multilineCornerRadius: Int { get }
+    var multilineCornerRadius: CGFloat { get }
     var multilineSpacing: CGFloat { get }
     var paddingInsets: UIEdgeInsets { get }
 }

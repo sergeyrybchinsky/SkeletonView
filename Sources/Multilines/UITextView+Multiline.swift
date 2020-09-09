@@ -10,7 +10,7 @@ public extension UITextView {
     }
 
     @IBInspectable
-    var linesCornerRadius: Int {
+    var linesCornerRadius: CGFloat {
         get { return multilineCornerRadius }
         set { multilineCornerRadius = min(newValue, 10) }
     }
@@ -41,10 +41,10 @@ extension UITextView: ContainsMultilineText {
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.lastLineFillingPercent) }
     }
 
-    var multilineCornerRadius: Int {
+    var multilineCornerRadius: CGFloat {
         get {
             let defaultValue = SkeletonAppearance.default.multilineCornerRadius
-            return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? Int ?? defaultValue
+            return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? CGFloat ?? defaultValue
         }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.multilineCornerRadius) }
     }

@@ -33,7 +33,7 @@ struct SkeletonMultilinesLayerConfig {
 	var lineHeight: CGFloat? = nil
 	var type: SkeletonType
 	var lastLineFillPercent: Int
-	var multilineCornerRadius: Int
+	var multilineCornerRadius: CGFloat
 	var multilineSpacing: CGFloat
 	var paddingInsets: UIEdgeInsets
 }
@@ -98,7 +98,7 @@ extension CALayer {
     }
 
     func updateLayerFrame(for index: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets) {
-        let spaceRequiredForEachLine = SkeletonAppearance.default.multilineHeight + multilineSpacing
+        let spaceRequiredForEachLine = size.height + multilineSpacing
         frame = CGRect(x: paddingInsets.left, y: CGFloat(index) * spaceRequiredForEachLine + paddingInsets.top, width: size.width, height: size.height)
     }
 

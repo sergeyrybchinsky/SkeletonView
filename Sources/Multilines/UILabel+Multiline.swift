@@ -9,7 +9,7 @@ public extension UILabel {
         set { lastLineFillingPercent = min(newValue, 100) }
     }
     @IBInspectable
-    var linesCornerRadius: Int {
+    var linesCornerRadius: CGFloat {
         get { return multilineCornerRadius }
         set { multilineCornerRadius = min(newValue, 10) }
     }
@@ -39,8 +39,8 @@ extension UILabel: ContainsMultilineText {
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.lastLineFillingPercent) }
     }
 
-    var multilineCornerRadius: Int {
-        get { return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? Int ?? SkeletonAppearance.default.multilineCornerRadius }
+    var multilineCornerRadius: CGFloat {
+        get { return ao_get(pkey: &MultilineAssociatedKeys.multilineCornerRadius) as? CGFloat ?? SkeletonAppearance.default.multilineCornerRadius }
         set { ao_set(newValue, pkey: &MultilineAssociatedKeys.multilineCornerRadius) }
     }
 

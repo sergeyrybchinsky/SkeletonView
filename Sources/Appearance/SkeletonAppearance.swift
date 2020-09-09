@@ -8,7 +8,7 @@ public protocol Appearance {
     var multilineHeight: CGFloat { get set }
     var multilineSpacing: CGFloat { get set }
     var multilineLastLineFillPercent: Int { get set }
-    var multilineCornerRadius: Int { get set }
+    var multilineCornerRadius: CGFloat { get set }
     var renderSingleLineAsView: Bool { get set }
 }
 
@@ -30,7 +30,7 @@ class SkeletonViewAppearance: Appearance {
 
     var multilineLastLineFillPercent: Int = 70
 
-    var multilineCornerRadius: Int = 0
+    var multilineCornerRadius: CGFloat = 0
     
     var renderSingleLineAsView: Bool = false
 }

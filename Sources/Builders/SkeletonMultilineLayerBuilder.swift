@@ -9,7 +9,7 @@ class SkeletonMultilineLayerBuilder {
     var index: Int?
     var height: CGFloat?
     var width: CGFloat?
-    var cornerRadius: Int?
+    var cornerRadius: CGFloat?
     var multilineSpacing: CGFloat = SkeletonAppearance.default.multilineSpacing
     var paddingInsets: UIEdgeInsets = .zero
 
@@ -33,7 +33,7 @@ class SkeletonMultilineLayerBuilder {
         return self
     }
 
-    func setCornerRadius(_ radius: Int) -> SkeletonMultilineLayerBuilder {
+    func setCornerRadius(_ radius: CGFloat) -> SkeletonMultilineLayerBuilder {
         self.cornerRadius = radius
         return self
     }
@@ -61,7 +61,7 @@ class SkeletonMultilineLayerBuilder {
         layer.name = CALayer.skeletonSubLayersName
         layer.updateLayerFrame(for: index, size: CGSize(width: width, height: height), multilineSpacing: self.multilineSpacing, paddingInsets: paddingInsets)
 
-        layer.cornerRadius = CGFloat(radius)
+        layer.cornerRadius = radius
         layer.masksToBounds = true
 
         return layer
