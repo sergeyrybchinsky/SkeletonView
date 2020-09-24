@@ -242,10 +242,25 @@ extension UIView {
 }
 
 extension UIView {
+	private func getColors(for config: SkeletonConfig) -> [UIColor] {
+		guard let tintColor = self.skeletonTintColor else {
+			return config.colors
+		}
+
+		switch config.type {
+		case .gradient:
+			let newConfig = SkeletonGradient(baseColor: tintColor)
+			return newConfig.colors
+		case .solid:
+			return [tintColor]
+		}
+	}
+
     func addSkeletonLayer(skeletonConfig config: SkeletonConfig) {
+
         guard let skeletonLayer = SkeletonLayerBuilder()
             .setSkeletonType(config.type)
-            .addColors(config.colors)
+            .addColors(getColors(for: config))
             .setHolder(self)
             .build()
             else { return }

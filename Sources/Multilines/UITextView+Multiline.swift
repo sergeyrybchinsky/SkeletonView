@@ -26,11 +26,25 @@ public extension UITextView {
         get { return paddingInsets }
         set { paddingInsets = newValue }
     }
+
+	@IBInspectable
+	var setFirstLineAsLastLine: Bool {
+		get { return firstLineAsLastLine }
+		set { firstLineAsLastLine = newValue }
+	}
 }
 
 extension UITextView: ContainsMultilineText {
 	var multilineTextFont: UIFont? {
 		return font
+	}
+
+	var firstLineAsLastLine: Bool {
+		get {
+			let defaultValue = SkeletonAppearance.default.firstLineAsLastLine
+			return ao_get(pkey: &MultilineAssociatedKeys.firstLineAsLastLine) as? Bool ?? defaultValue
+		}
+		set { ao_set(newValue, pkey: &MultilineAssociatedKeys.firstLineAsLastLine) }
 	}
 	
     var lastLineFillingPercent: Int {

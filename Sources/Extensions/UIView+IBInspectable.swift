@@ -19,6 +19,11 @@ public extension UIView {
         return status == .on || (subviewsSkeletonables.first(where: { $0.isSkeletonActive }) != nil)
     }
 
+	var skeletonTintColor: UIColor? {
+		get { return ao_get(pkey: &ViewAssociatedKeys.skeletonTintColor) as? UIColor }
+		set { ao_setOptional(newValue, pkey: &ViewAssociatedKeys.skeletonTintColor) }
+	}
+
     private var skeletonable: Bool! {
         get { return ao_get(pkey: &ViewAssociatedKeys.skeletonable) as? Bool ?? false }
         set { ao_set(newValue ?? false, pkey: &ViewAssociatedKeys.skeletonable) }

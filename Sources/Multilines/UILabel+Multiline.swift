@@ -23,9 +23,22 @@ public extension UILabel {
         get { return paddingInsets }
         set { paddingInsets = newValue }
     }
+	@IBInspectable
+	var setFirstLineAsLastLine: Bool {
+		get { return firstLineAsLastLine }
+		set { firstLineAsLastLine = newValue }
+	}
 }
 
 extension UILabel: ContainsMultilineText {
+	var firstLineAsLastLine: Bool {
+		get {
+			let defaultValue = SkeletonAppearance.default.firstLineAsLastLine
+			return ao_get(pkey: &MultilineAssociatedKeys.firstLineAsLastLine) as? Bool ?? defaultValue
+		}
+		set { ao_set(newValue, pkey: &MultilineAssociatedKeys.firstLineAsLastLine) }
+	}
+
 	var multilineTextFont: UIFont? {
 		return font
 	}
