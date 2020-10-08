@@ -91,7 +91,7 @@ struct SkeletonLayer {
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
                                                    paddingInsets: textView.paddingInsets,
-												   firstLineAsLastLine: textView.firstLineAsLastLine)
+												   useLastLineFillPercentForSingleLine: textView.useLastLineFillPercentForSingleLine)
 
         maskLayer.addMultilinesLayers(for: config)
     }
@@ -105,7 +105,7 @@ struct SkeletonLayer {
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
 												   paddingInsets: textView.paddingInsets,
-												   firstLineAsLastLine: textView.firstLineAsLastLine)
+												   useLastLineFillPercentForSingleLine: textView.useLastLineFillPercentForSingleLine)
         
         maskLayer.updateMultilinesLayers(for: config)
     }

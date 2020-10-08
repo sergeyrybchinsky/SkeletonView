@@ -10,7 +10,7 @@ public protocol Appearance {
     var multilineLastLineFillPercent: Int { get set }
     var multilineCornerRadius: CGFloat { get set }
     var renderSingleLineAsView: Bool { get set }
-	var firstLineAsLastLine: Bool { get set }
+	var useLastLineFillPercentForSingleLine: Bool { get set }
 }
 
 public enum SkeletonAppearance {
@@ -35,6 +35,6 @@ class SkeletonViewAppearance: Appearance {
     
     var renderSingleLineAsView: Bool = false
 
-	var firstLineAsLastLine: Bool = false
+	var useLastLineFillPercentForSingleLine: Bool = false
 }
 // codebeat:enable[TOO_MANY_IVARS]

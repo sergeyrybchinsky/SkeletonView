@@ -36,7 +36,7 @@ struct SkeletonMultilinesLayerConfig {
 	var multilineCornerRadius: CGFloat
 	var multilineSpacing: CGFloat
 	var paddingInsets: UIEdgeInsets
-	var firstLineAsLastLine: Bool
+	var useLastLineFillPercentForSingleLine: Bool
 }
 
 
@@ -63,7 +63,7 @@ extension CALayer {
             .setHeight(height)
     
         (0..<numberOfSublayers).forEach { index in
-			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: config.lastLineFillPercent, paddingInsets: config.paddingInsets, firstLineAsLastLine: config.firstLineAsLastLine)
+			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: config.lastLineFillPercent, paddingInsets: config.paddingInsets, useLastLineFillPercentForSingleLine: config.useLastLineFillPercentForSingleLine)
             if let layer = layerBuilder
                 .setIndex(index)
                 .setWidth(width)
@@ -85,14 +85,14 @@ extension CALayer {
         }
         
         for (index, layer) in currentSkeletonSublayers.enumerated() {
-			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets, firstLineAsLastLine: config.firstLineAsLastLine)
+			let width = calculatedWidthForLine(at: index, totalLines: numberOfSublayers, lastLineFillPercent: lastLineFillPercent, paddingInsets: paddingInsets, useLastLineFillPercentForSingleLine: config.useLastLineFillPercentForSingleLine)
             layer.updateLayerFrame(for: index, size: CGSize(width: width, height: height), multilineSpacing: multilineSpacing, paddingInsets: paddingInsets)
         }
     }
 
-	private func calculatedWidthForLine(at index: Int, totalLines: Int, lastLineFillPercent: Int, paddingInsets: UIEdgeInsets, firstLineAsLastLine: Bool) -> CGFloat {
+	private func calculatedWidthForLine(at index: Int, totalLines: Int, lastLineFillPercent: Int, paddingInsets: UIEdgeInsets, useLastLineFillPercentForSingleLine: Bool) -> CGFloat {
         var width = bounds.width - paddingInsets.left - paddingInsets.right
-        if (index == totalLines - 1 && totalLines != 1) || (firstLineAsLastLine && totalLines == 1) {
+        if (index == totalLines - 1 && totalLines != 1) || (useLastLineFillPercentForSingleLine && totalLines == 1) {
             width = width * CGFloat(lastLineFillPercent) / 100
         }
         return width

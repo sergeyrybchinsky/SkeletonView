@@ -24,19 +24,19 @@ public extension UILabel {
         set { paddingInsets = newValue }
     }
 	@IBInspectable
-	var setFirstLineAsLastLine: Bool {
-		get { return firstLineAsLastLine }
-		set { firstLineAsLastLine = newValue }
+	var setUseLastLineFillPercentForSingleLine: Bool {
+		get { return useLastLineFillPercentForSingleLine }
+		set { useLastLineFillPercentForSingleLine = newValue }
 	}
 }
 
 extension UILabel: ContainsMultilineText {
-	var firstLineAsLastLine: Bool {
+	var useLastLineFillPercentForSingleLine: Bool {
 		get {
-			let defaultValue = SkeletonAppearance.default.firstLineAsLastLine
-			return ao_get(pkey: &MultilineAssociatedKeys.firstLineAsLastLine) as? Bool ?? defaultValue
+			let defaultValue = SkeletonAppearance.default.useLastLineFillPercentForSingleLine
+			return ao_get(pkey: &MultilineAssociatedKeys.useLastLineFillPercentForSingleLine) as? Bool ?? defaultValue
 		}
-		set { ao_set(newValue, pkey: &MultilineAssociatedKeys.firstLineAsLastLine) }
+		set { ao_set(newValue, pkey: &MultilineAssociatedKeys.useLastLineFillPercentForSingleLine) }
 	}
 
 	var multilineTextFont: UIFont? {
