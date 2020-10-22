@@ -23,9 +23,22 @@ public extension UILabel {
         get { return paddingInsets }
         set { paddingInsets = newValue }
     }
+	@IBInspectable
+	var setUseLastLineFillPercentForSingleLine: Bool {
+		get { return useLastLineFillPercentForSingleLine }
+		set { useLastLineFillPercentForSingleLine = newValue }
+	}
 }
 
 extension UILabel: ContainsMultilineText {
+	var useLastLineFillPercentForSingleLine: Bool {
+		get {
+			let defaultValue = SkeletonAppearance.default.useLastLineFillPercentForSingleLine
+			return ao_get(pkey: &MultilineAssociatedKeys.useLastLineFillPercentForSingleLine) as? Bool ?? defaultValue
+		}
+		set { ao_set(newValue, pkey: &MultilineAssociatedKeys.useLastLineFillPercentForSingleLine) }
+	}
+
 	var multilineTextFont: UIFont? {
 		return font
 	}

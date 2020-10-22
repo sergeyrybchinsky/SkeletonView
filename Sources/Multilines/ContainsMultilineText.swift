@@ -7,6 +7,7 @@ enum MultilineAssociatedKeys {
     static var multilineCornerRadius = "multilineCornerRadius"
     static var multilineSpacing = "multilineSpacing"
     static var paddingInsets = "paddingInsets"
+	static var useLastLineFillPercentForSingleLine = "useLastLineFillPercentForSingleLine"
 }
 
 protocol ContainsMultilineText {
@@ -16,6 +17,7 @@ protocol ContainsMultilineText {
     var multilineCornerRadius: CGFloat { get }
     var multilineSpacing: CGFloat { get }
     var paddingInsets: UIEdgeInsets { get }
+	var useLastLineFillPercentForSingleLine: Bool { get }
 }
 
 extension ContainsMultilineText {
