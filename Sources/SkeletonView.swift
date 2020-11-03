@@ -93,14 +93,14 @@ public extension UIView {
 }
 
 extension UIView {
-    @objc func skeletonLayoutSubviews() {
+    @objc public func skeletonLayoutSubviews() {
         guard Thread.isMainThread else { return }
         skeletonLayoutSubviews()
         guard isSkeletonActive else { return }
         layoutSkeletonIfNeeded()
     }
 
-    @objc func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    @objc public func skeletonTraitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         skeletonTraitCollectionDidChange(previousTraitCollection)
         guard isSkeletonable, isSkeletonActive, let config = currentSkeletonConfig else { return }
         updateSkeleton(skeletonConfig: config)
@@ -117,8 +117,12 @@ extension UIView {
         guard isSkeletonable && !isSkeletonActive else { return }
         currentSkeletonConfig = config
         prepareForSkeleton()
-        swizzleLayoutSubviews()
-        swizzleTraitCollectionDidChange()
+
+        if !SkeletonManager.disableSwizzling {
+            swizzleLayoutSubviews()
+            swizzleTraitCollectionDidChange()
+        }
+
         addDummyDataSourceIfNeeded()
         subviewsSkeletonables.recursiveSearch(leafBlock: {
             showSkeletonIfNotActive(skeletonConfig: config)

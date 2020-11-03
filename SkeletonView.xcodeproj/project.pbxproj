@@ -66,6 +66,7 @@
 		8785E3A3211C9CE800CC9DFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		88DEA97F1FCDBD78006C80EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DEA97D1FCDBD1F006C80EF /* Constants.swift */; };
 		8933C7851EB5B820000D00A4 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* SkeletonView.swift */; };
+		CEDDA6ED25518306007D0BFE /* SkeletonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDA6EC25518306007D0BFE /* SkeletonManager.swift */; };
 		E4CE587D22EEE65200333067 /* SkeletonTransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */; };
 		E4CE588B22EEF70D00333067 /* UIView+Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE587B22EEE63100333067 /* UIView+Transitions.swift */; };
 		F51DE1091FBF70A70037919A /* SkeletonAnimationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */; };
@@ -184,6 +185,7 @@
 		8785E3A0211C9C9800CC9DFD /* SkeletonDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonDebug.swift; sourceTree = "<group>"; };
 		88DEA97D1FCDBD1F006C80EF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8933C7841EB5B820000D00A4 /* SkeletonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		CEDDA6EC25518306007D0BFE /* SkeletonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonManager.swift; sourceTree = "<group>"; };
 		E4CE587B22EEE63100333067 /* UIView+Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Transitions.swift"; sourceTree = "<group>"; };
 		E4CE587C22EEE65200333067 /* SkeletonTransitionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonTransitionStyle.swift; sourceTree = "<group>"; };
 		F51DE1081FBF70A70037919A /* SkeletonAnimationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAnimationBuilder.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				F5D3FB0A209DCAA300003FCF /* SubviewsSkeletonables.swift */,
 				870F4E4221CAC07300B9233B /* SkeletonConfig.swift */,
 				54DA8A04B8C698DE0A63F1CB /* SkeletonViewProtocol.swift */,
+				CEDDA6EC25518306007D0BFE /* SkeletonManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				F5F899E91FAB9D2B002E8FDA /* SkeletonLayer.swift in Sources */,
 				F5307E2E1FB0E5E400EE67C5 /* UIView+Frame.swift in Sources */,
 				877EFA4521BEE9D80031FC00 /* SkeletonLayerBuilder.swift in Sources */,
+				CEDDA6ED25518306007D0BFE /* SkeletonManager.swift in Sources */,
 				F5A5E8B4211DCE7000FD20D0 /* Int+Whitespaces.swift in Sources */,
 				870F4E4321CAC07300B9233B /* SkeletonConfig.swift in Sources */,
 				F51DF871206E91B300D23301 /* SkeletonReusableCell.swift in Sources */,
